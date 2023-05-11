@@ -1,0 +1,15 @@
+.task {
+  width: 50%;
+  background-color: white;
+  padding: 2em;
+  margin: 2em;
+  border-radius: 1em;
+}
+
+.description {
+  margin-bottom: 1em;
+}
+
+.title {
+  margin-bottom: 1em;
+}
