@@ -6,13 +6,15 @@
 
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
-  background-color: #7772f6;
+  background-color: #8294C4;
 }
 :root {
   --primary-color: #605DC8;
-  --secondary-color: #8B89E6;
+  --secondary-color: #d21212ce;
+  --boxes-color: #f8e7b5;
   --accent-color: #e8e7fa;
-  --shadow-color: #E8E8E8;
+  --button-color: #D21312;
+  --shadow-color: #831212;
 }
 
 button.primary {
