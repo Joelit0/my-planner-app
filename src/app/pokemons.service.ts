@@ -8,8 +8,9 @@ export class PokemonsService {
 
   constructor() { }
 
-  async getPokemons(): Promise<any> {
+  async getPokemons(): Promise<Pokemon[]> {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon');
-    return await response.json() ?? [];
+    const pokemonResponse = await response.json();
+    return pokemonResponse.results ?? [];
   }
 }
