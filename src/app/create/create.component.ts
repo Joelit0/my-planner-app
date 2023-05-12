@@ -7,21 +7,7 @@ import { Pokemon } from '../pokemon'
   selector: 'app-create',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Description">
-        <select name="pokemons" id="pokemons">
-          <option value="">Select a pokemon</option>
-          <option *ngFor="let pokemon of pokemonsList" value="pokemon.name">
-            {{pokemon.name}}
-          </option>
-        </select>
-        <button class="button">Add</button>
-      </form>
-    </section>
-  `,
+  templateUrl:'./create.component.html' ,
   styleUrls: ['./create.component.css']
 })
 
