@@ -7,7 +7,7 @@ import { Pokemon } from '../pokemon'
   selector: 'app-create',
   standalone: true,
   imports: [CommonModule],
-  templateUrl:'./create.component.html' ,
+  templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
 
@@ -17,7 +17,7 @@ export class CreateComponent {
 
   constructor() {
     this.pokemonService.getPokemons().then((pokemonsList) => {
-      this.pokemonsList = pokemonsList.results;
+      this.pokemonsList = pokemonsList;
     });
   }
 }

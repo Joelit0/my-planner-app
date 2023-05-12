@@ -4,7 +4,7 @@
         <input type="text" placeholder="Description">
         <select name="pokemons" id="pokemons">
             <option value="">Select a pokemon</option>
-            <option *ngFor="let pokemon of pokemonsList" value="pokemon.name">
+            <option *ngFor="let pokemon of pokemonsList">
                 {{pokemon.name}}
             </option>
         </select>
