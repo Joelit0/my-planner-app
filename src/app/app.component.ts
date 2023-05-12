@@ -15,8 +15,11 @@ import { Task } from './task';
   ],
   template: `
     <section class="title">
-      <h1>My Planner</h1>
-      <p>Make your own tasks...</p>
+      <h1>
+        <img src="../assets/logo.png" alt="logo">
+        My Planner
+      </h1>
+      <p>Make your own planner and choose a Pokemon to help you with it!</p>
     </section>
 
     <section>
