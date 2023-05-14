@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create/create.component';
 import { TaskComponent } from './task/task.component';
 import { TasksService } from './tasks.service';
-import { Task } from './task';
+import { Task } from './interfaces/task';
 
 @Component({
   selector: 'app-root',
