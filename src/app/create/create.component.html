@@ -1,13 +1,13 @@
 <section>
-    <form>
-        <input type="text" placeholder="Title">
-        <input type="text" placeholder="Description">
-        <select name="pokemons" id="pokemons">
+    <form [formGroup]="addForm">
+        <input type="text" placeholder="Title" formControlName="title">
+        <input type="text" placeholder="Description" formControlName="description">
+        <select name="pokemons" id="pokemons" formControlName="pokemons">
             <option value="">Select a pokemon</option>
             <option *ngFor="let pokemon of pokemonsList">
                 {{pokemon.name}}
             </option>
         </select>
-        <button class="button">Add</button>
+        <button class="button" type="submit">Add</button>
     </form>
 </section>
