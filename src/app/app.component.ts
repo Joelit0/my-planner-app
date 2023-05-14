@@ -4,6 +4,7 @@ import { CreateComponent } from './create/create.component';
 import { TaskComponent } from './task/task.component';
 import { TasksService } from './tasks.service';
 import { Task } from './task';
+//import { title } from 'process';
 
 @Component({
   selector: 'app-root',
@@ -35,10 +36,11 @@ import { Task } from './task';
 export class AppComponent {
   taskList: Task[] = [];
   taskService: TasksService = inject(TasksService);
+  taskListLength: number = this.taskList.length;
 
   constructor() {
     this.taskService.getTasks().then((taskList) => {
       this.taskList = taskList;
     });
-  }
+  }  
 }
