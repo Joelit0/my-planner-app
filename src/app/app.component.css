@@ -15,7 +15,6 @@ header {
   display: flex;
   flex-wrap: wrap;
   margin-top: 2rem;
-  justify-content: space-between;
 }
 
 .create-task-container {
