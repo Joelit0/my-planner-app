@@ -6,15 +6,7 @@ import { Task } from '../interfaces/task';
   selector: 'app-task',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <section class="task">
-      <h2 class="title">{{ task.title }}</h2>
-      <hr>
-      <p class="description">{{ task.description }}</p>
-      <hr>
-      <p class="pokemon">Pokemon: {{ task.pokemon }}</p>
-    </section>
-  `,
+  templateUrl: "./task.component.html",
   styleUrls: ['./task.component.css']
 })
 
