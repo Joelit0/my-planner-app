@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { PokemonsService } from '../pokemons.service';
+import { Pokemon } from '../interfaces/pokemon'
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { TasksService } from '../tasks.service';
 
@@ -39,29 +43,26 @@ import { TasksService } from '../tasks.service';
 @Component({
   selector: 'app-create',
   standalone: true,
-  imports: [CommonModule],
-  template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Title" #titleInput>
-        <input type="text" placeholder="Description" #descriptionInput>
-        <select name="pokemons" id="pokemons" #pokemonInput>
-          <option value="">Select a pokemon</option>
-        </select>
-        <button type="button" (click)="createTask(titleInput.value, descriptionInput.value, pokemonInput.value)">Add</button>
-      </form>
-    </section>
-  `,
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
 
 export class CreateComponent {
-  constructor(private taskService: TasksService) { }
+  pokemonsList: Pokemon[] = [];
+  pokemonService: PokemonsService = inject(PokemonsService);
 
-  async createTask(title: string, description: string, pokemon: string): Promise<void> {
-    const task = await this.taskService.createTask(title, description, pokemon);
-    console.log('Nueva tarea creada:', task);
+  constructor() {
+    this.pokemonService.getPokemons().then((pokemonsList) => {
+      this.pokemonsList = pokemonsList;
+    });
   }
+
+  addForm = new FormGroup({
+    title : new FormControl('', Validators.required),
+    description : new FormControl('', Validators.required),
+    pokemons: new FormControl('', Validators.required)
+  })
 }
 
 
