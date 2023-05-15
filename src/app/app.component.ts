@@ -22,10 +22,13 @@ import { HeaderComponent } from './header/header.component';
 export class AppComponent {
   taskList: Task[] = [];
   taskService: TasksService = inject(TasksService);
-
   constructor() {
     this.taskService.getTasks().then((taskList) => {
       this.taskList = taskList;
     });
-  }
+  } 
+  updateList(newContent:Task[]){
+    this.taskList = newContent;
+  } 
 }
+

@@ -1,46 +1,5 @@
 {
   "tasks": [
-    {
-      "id": 0,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 1,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 2,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 3,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 4,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 5,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    },
-    {
-      "id": 6,
-      "title": "Acme Fresh Start Housing",
-      "description": "Chicago",
-      "pokemon": "Il"
-    }
+   
   ]
 }

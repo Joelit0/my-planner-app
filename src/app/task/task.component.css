@@ -1,9 +1,11 @@
 .task {
   width: 50%;
-  background-color: white;
+  background-color: #F4EBD9;
   padding: 2em;
   margin: 2em;
+  border: 0.15em solid black;
   border-radius: 1em;
+  transition: transform 0.3s;
 }
 
 .description {
@@ -11,5 +13,11 @@
 }
 
 .title {
+  color: var(--shadow-color);
+  font-style: italic;
   margin-bottom: 1em;
+}
+
+.task:hover {
+  transform: scale(1.2);
 }
