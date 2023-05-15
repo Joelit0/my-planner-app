@@ -21,23 +21,3 @@ header {
 .create-task-container {
   margin-top: 2rem;
 }
-
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: xx-large;
-  margin: 5px;
-  align-self: center;
-  color: var(--secondary-color);
-}
-
-p {
-  text-align: center;
-  margin: 10px;
-  color: #FFF;
-}
-
-img {
-  width: 100px;
-}

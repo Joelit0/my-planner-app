@@ -2,36 +2,20 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CreateComponent } from './create/create.component';
 import { TaskComponent } from './task/task.component';
-import { TasksService } from './tasks.service';
+import { TasksService } from './services/tasks.service';
 import { Task } from './interfaces/task';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    HeaderComponent,
     CreateComponent,
     TaskComponent,
     CommonModule
   ],
-  template: `
-    <section class="title">
-      <h1>
-        <img src="../assets/logo.png" alt="logo">
-        My Planner
-      </h1>
-      <p>Make your own planner and choose a Pokemon to help you with it!</p>
-    </section>
-
-    <section>
-      <div class="create-task-container">
-        <app-create></app-create>
-      </div>
-
-      <div class="tasks-container">
-        <app-task *ngFor="let task of taskList" [task]="task"></app-task>
-      </div>
-    </section>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 

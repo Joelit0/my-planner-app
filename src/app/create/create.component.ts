@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PokemonsService } from '../pokemons.service';
+import { PokemonsService } from '../services/pokemons.service';
 import { Pokemon } from '../interfaces/pokemon'
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
