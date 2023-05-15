@@ -24,7 +24,7 @@ import { Task } from './interfaces/task';
 
     <section>
       <div class="create-task-container">
-        <app-create></app-create>
+        <app-create (newList)="updateList($event)"></app-create>
       </div>
 
       <div class="tasks-container">
@@ -38,10 +38,13 @@ import { Task } from './interfaces/task';
 export class AppComponent {
   taskList: Task[] = [];
   taskService: TasksService = inject(TasksService);
-
   constructor() {
     this.taskService.getTasks().then((taskList) => {
       this.taskList = taskList;
     });
-  }
+  } 
+  updateList(newContent:Task[]){
+    this.taskList = newContent;
+  } 
 }
+
