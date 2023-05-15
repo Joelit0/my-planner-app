@@ -28,7 +28,8 @@ import { Task } from './interfaces/task';
       </div>
 
       <div class="tasks-container">
-        <app-task *ngFor="let task of taskList" [task]="task"></app-task>
+        <app-task class="cards" *ngIf="taskList.length > 0; else elseBlock" [taskList]="taskList"></app-task>
+        <ng-template #elseBlock><h1>Crea tu primera tarea</h1></ng-template>
       </div>
     </section>
   `,

@@ -1,4 +1,4 @@
-<section class="task">
+<section class="task" *ngFor="let task of taskList">
     <h2 class="title">{{ task.title }}</h2>
     <hr>
     <p class="description">{{ task.description }}</p>

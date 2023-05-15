@@ -11,5 +11,5 @@ import { Task } from '../interfaces/task';
 })
 
 export class TaskComponent {
-  @Input() task!: Task;
+  @Input() taskList!: Task[];
 }
