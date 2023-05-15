@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, Output, inject, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PokemonsService } from '../pokemons.service';
 import { Pokemon } from '../interfaces/pokemon'
@@ -6,39 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { TasksService } from '../tasks.service';
-
-
-// @Component({
-//   selector: 'app-create',
-//   standalone: true,
-//   imports: [CommonModule],
-//   template: `
-//     <section>
-//       <form>
-//         <input type="text" placeholder="Title">
-//         <input type="text" placeholder="Description">
-//         <select name="pokemons" id="pokemons">
-//           <option value="">Select a pokemon</option>
-//         </select>
-//         <button type="button">Add</button>
-//       </form>
-//     </section>
-//   `,
-//   styleUrls: ['./create.component.css']
-// })
-
-// export class CreateComponent {
-//   title = '';
-//   description = '';
-//   pokemon = '';
-
-//   constructor(private taskService: TasksService) { }
-
-//   async createTask(): Promise<void> {
-//     const task = await this.taskService.createTask(this.title, this.description, this.pokemon);
-//     console.log('Nueva tarea creada:', task);
-//   }
-// }
+import { Task } from '../interfaces/task';
 
 @Component({
   selector: 'app-create',
@@ -49,10 +17,13 @@ import { TasksService } from '../tasks.service';
 })
 
 export class CreateComponent {
+  updatedTaskList: Task[] = [];
+  @Output() newList = new EventEmitter<Task[]>;
+
   pokemonsList: Pokemon[] = [];
   pokemonService: PokemonsService = inject(PokemonsService);
 
-  constructor() {
+  constructor(private taskService: TasksService) {
     this.pokemonService.getPokemons().then((pokemonsList) => {
       this.pokemonsList = pokemonsList;
     });
@@ -63,6 +34,15 @@ export class CreateComponent {
     description : new FormControl('', Validators.required),
     pokemons: new FormControl('', Validators.required)
   })
+
+
+  async createTask(addForm: FormGroup): Promise<void> {
+    const task = await this.taskService.createTask(addForm.value.title, addForm.value.description, addForm.value.pokemons);
+    await this.taskService.getTasks().then((taskList) => {
+      this.updatedTaskList = taskList;
+    });
+    this.newList.emit(this.updatedTaskList);
+  }
 }
 
 

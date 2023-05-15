@@ -1,5 +1,5 @@
 <section>
-    <form [formGroup]="addForm">
+    <form [formGroup]="addForm" (ngSubmit)="createTask(addForm)">
         <input type="text" placeholder="Title" formControlName="title">
         <input type="text" placeholder="Description" formControlName="description">
         <select name="pokemons" id="pokemons" formControlName="pokemons">
