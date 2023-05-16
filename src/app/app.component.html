@@ -1,0 +1,11 @@
+<section>
+    <app-header></app-header>
+
+    <div class="create-task-container">
+        <app-create></app-create>
+    </div>
+
+    <div class="tasks-container">
+        <app-task *ngFor="let task of taskList" [task]="task"></app-task>
+    </div>
+</section>

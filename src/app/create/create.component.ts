@@ -5,7 +5,7 @@ import { Pokemon } from '../interfaces/pokemon'
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { TasksService } from '../tasks.service';
+import { TasksService } from '../services/tasks.service';
 import { Task } from '../interfaces/task';
 
 @Component({
