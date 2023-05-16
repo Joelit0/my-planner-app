@@ -2,7 +2,7 @@
 
 # MY PLANNER APP
 
-![](../my-planner-app/src/assets/myplanner.PNG)
+![](/src/assets/myplanner.PNG)
 
 </div>
 
