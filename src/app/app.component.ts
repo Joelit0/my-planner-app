@@ -5,6 +5,7 @@ import { TaskComponent } from './task/task.component';
 import { TasksService } from './services/tasks.service';
 import { Task } from './interfaces/task';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent,
     CreateComponent,
     TaskComponent,
-    CommonModule
+    CommonModule,
+    LoginComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
